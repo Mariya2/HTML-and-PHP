@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style type="text/css">
+	form {
+	margin: 0 auto;
+	width: 70%;
+	padding: 5px 7px;
+	}
+	label{
+		padding: 5px;
+		display: block;
+	}
+	input, select {
+	padding: 3px;
+	margin-bottom: 10px;
+	border-radius: 3px;
+	}
+	p {
+		padding: 5px;
+		color: red;
+	}
+	button {
+		padding: 5px;
+		margin: 5px;
+		border: 2px inset darkgray;
+		border-radius: 3px;
+	}
+</style>
+<body>
+	<form method="get" action="1HTML-PHP.php">
+		<div>
+			<label for="first_num">Въведете първото число</label>
+			<input type="number" name="first_num" id="first_num" value="1"/>
+		</div>
+		<div>
+			<label for="second_num">Въведете второто число</label>
+			<input type="number" name="second_num" id="second_num" value="1"/>
+		</div>
+		<div>
+			<label for="select_operation">Изберете операция</label>
+			<select id="select_operation" name="operation">
+				<option value="sum" selected="selected"> Събиране (+) <option>
+				<option value="sub"> Изваждане (-) <option>
+				<option value="multiply"> Умножение (*) <option>
+				<option value="divide"> Деление (/) <option>
+			</select>
+		</div>
+		<div>
+			<button type="submit">Изчисли</button> 
+			<?php foreach ($errors as $error):?>
+			<p id="errors"><?php echo $error; ?></p>
+			<?php endforeach;?>
+			<p id="result"><?php echo $result; ?></p>
+		</div>
+	</form>
+</body>
+</html>
